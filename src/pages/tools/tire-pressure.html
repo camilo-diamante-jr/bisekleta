@@ -1,0 +1,127 @@
+<section class="section is-fullheight">
+  <div class="container">
+    <div class="card clean-card">
+      <header class="card-header clean-header">
+        <p class="card-header-title is-justify-content-center">
+          TIRE PRESSURE GUIDE
+        </p>
+      </header>
+
+      <div class="card-content">
+        <div class="columns is-multiline is-variable is-2">
+          <div class="column is-4">
+            <div class="field">
+              <label for="weightInput" class="label">Rider Weight (kg)</label>
+              <div class="control">
+                <input
+                  type="number"
+                  class="input"
+                  id="weightInput"
+                  placeholder="Enter weight"
+                  min="30"
+                  max="150"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="field">
+              <label for="tireTypeInput" class="label">Tire Type</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select id="tireTypeInput">
+                    <option value="">Select Type</option>
+                    <option value="road">Road Bike</option>
+                    <option value="mountain">Mountain Bike</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="field">
+              <label for="tireSizeInput" class="label"
+                >Tire Diameter (inches)</label
+              >
+              <div class="control">
+                <input
+                  type="number"
+                  class="input"
+                  id="tireSizeInput"
+                  placeholder="e.g., 28, 29"
+                  min="20"
+                  max="35"
+                  step="0.1"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="field">
+              <label for="tireWidthInput" class="label"
+                >Tire Width (inches)</label
+              >
+              <div class="control">
+                <input
+                  type="number"
+                  class="input"
+                  id="tireWidthInput"
+                  placeholder="e.g., 1.25, 1.5, 1.75"
+                  min="1"
+                  max="3"
+                  step="0.01"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="field">
+              <label for="unitInput" class="label">Unit</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select id="unitInput">
+                    <option value="">Select Unit</option>
+                    <option value="bar">Bar</option>
+                    <option value="psi">PSI</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="field">
+              <label for="tireMaxInput" class="label">Tire Max PSI</label>
+              <div class="control">
+                <input
+                  type="number"
+                  class="input"
+                  id="tireMaxInput"
+                  placeholder="Max PSI from tire"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box clean-output has-text-centered mt-4">
+          <h4 class="title is-6 mb-1">Recommended Tire Pressure</h4>
+          <p class="subtitle output" id="tirePressureOutput"></p>
+        </div>
+      </div>
+
+      <footer class="card-footer">
+        <p class="card-footer-item">
+          <small
+            ><strong>Note:</strong> Recommended values respect max PSI. Adjust
+            Max PSI for real tires if needed.</small
+          >
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>

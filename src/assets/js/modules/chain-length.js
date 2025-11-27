@@ -1,5 +1,5 @@
 export function initChainLenght() {
-  const filePath = "./src/tools/chain-length.html";
+  const filePath = "./src/pages/tools/chain-length.html";
 
   $("#chainLengthContent").load(filePath, function () {
     function calculateChainLength() {
@@ -8,7 +8,7 @@ export function initChainLenght() {
       const biggestcogs = parseFloat($("#biggestcogs").val());
 
       if (isNaN(chainstay) || isNaN(chainring) || isNaN(biggestcogs)) {
-        $(".output").html("—");
+        $(".output").html("");
         return;
       }
 

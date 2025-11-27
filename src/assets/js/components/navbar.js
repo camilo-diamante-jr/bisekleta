@@ -1,5 +1,5 @@
 export function initNavbar() {
-  $("#navbar-content").load("./src/components/navbar.html", () => {
+  $("#navbar-content").load("./src/pages/components/navbar.html", () => {
     setupNavbarToggle();
     setupNavClicks();
 
@@ -24,20 +24,17 @@ function setupNavbarToggle() {
   });
 }
 
-/* ---------------- INTERCEPT NAV CLICKS ---------------- */
 function setupNavClicks() {
   $(".nav-item").on("click", function (e) {
     e.preventDefault();
     const link = $(this).attr("href");
     const target = $(this).data("target");
 
-    // ❌ ERROR: Missing data-target
     if (!target) {
       bulmaAlert("Navigation Error", "This link has no data-target assigned.");
       return;
     }
 
-    // ❌ ERROR: Target element not found
     if ($(target).length === 0) {
       bulmaAlert(
         "404 Not Found",
@@ -53,12 +50,10 @@ function setupNavClicks() {
   });
 }
 
-/* ---------------- CLEAN URL PATH ---------------- */
 function cleanPath(path) {
   return path.replace(/\/$/, "").replace(/\.html$/, "");
 }
 
-/* ---------------- SHOW PAGE ---------------- */
 export function showPage(path) {
   const cleanedPath = cleanPath(path);
 
@@ -82,7 +77,6 @@ export function showPage(path) {
     }
   });
 
-  // ❌ No matching nav-item link
   if (!found) {
     bulmaAlert("404", "The page you're trying to open does not exist.");
   }
@@ -90,9 +84,7 @@ export function showPage(path) {
   localStorage.setItem("activePage", path);
 }
 
-/* ---------------- BULMA ALERT FUNCTION ---------------- */
 function bulmaAlert(title, message) {
-  // Remove existing alerts
   $(".notification.is-danger").remove();
 
   const alertHTML = `
@@ -105,14 +97,12 @@ function bulmaAlert(title, message) {
 
   $("body").append(alertHTML);
 
-  // Close button
   $(".notification .delete").on("click", function () {
     $(this)
       .parent()
       .fadeOut(200, () => $(this).remove());
   });
 
-  // Auto-hide after 3 seconds
   setTimeout(() => {
     $(".notification.is-danger").fadeOut(300, function () {
       $(this).remove();
